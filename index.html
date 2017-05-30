@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Today's date with day/month prefixed zero</title>
+	<link href="prism/prism.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: verdana, sans-serif;
+      background: #efefef;
+      color: #333;
+      text-align: center;
+    }
+    #date {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Today's date with leading zeros</h1>
+  <p>If day/month is less than '10', it is prefixed with zero.</p>
+  <p id="date"></p>
+  <p><strong>TODO:</strong> rewrite to accept any date passed as a parameter</p>
+
+<pre><code class="language-javascript">(function(){
+
+  const d = new Date();
+
+  zeroPrefix = function (needZero) {
+    return (needZero < 10) ? `0${needZero}` : needZero;
+  };
+
+  const now = {
+    day: function() {
+      const day = d.getDate();
+      return zeroPrefix(day);
+    },
+    month: function() {
+      const month = d.getMonth()+1;
+      return zeroPrefix(month);
+    },
+    year: d.getFullYear()
+  }
+
+  document.getElementById("date").innerHTML=`${now.day()}/${now.month()}/${now.year}`;
+
+})();
+</pre></code>
+
+	<script src="js/date-with-zero.js"></script>
+	<script src="prism/prism.js"></script>
+
+</body>
+</html>
