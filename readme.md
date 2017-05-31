@@ -8,4 +8,5 @@ Uses? For lining up columns of dates nicely. Or anything else you can think of.
 
 ## TODO:
 
-Rewrite so you can use this to add leading zeros to any date passed in as a parameter.
+- Rewrite so you can use this to add leading zeros to any date passed in as a parameter
+- use an array of 3-letter month abbreviations for readable dates to be the same length
