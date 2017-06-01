@@ -1,5 +1,5 @@
-(function(){
-
+{
+  'use strict';
   const d = new Date();
   
   zeroPrefix = function (needZero) {
@@ -19,5 +19,4 @@
   }
 
   document.getElementById("date").innerHTML=`${now.day()}/${now.month()}/${now.year}`;
-
-})();
+}

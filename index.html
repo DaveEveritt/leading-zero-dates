@@ -14,14 +14,14 @@
   <p id="date"></p>
   <p>For <a href="https://github.com/DaveEveritt/leading-zero-dates/blob/master/readme.md">TODOs see README</a></p>
 
-<pre><code class="language-javascript">(function(){
-
+<pre><code class="language-javascript">{
+  'use strict';
   const d = new Date();
-
+  
   zeroPrefix = function (needZero) {
     return (needZero < 10) ? `0${needZero}` : needZero;
   };
-
+  
   const now = {
     day: function() {
       const day = d.getDate();
@@ -35,8 +35,7 @@
   }
 
   document.getElementById("date").innerHTML=`${now.day()}/${now.month()}/${now.year}`;
-
-})();
+}
 </pre></code>
 
   <p><a href="https://github.com/DaveEveritt/leading-zero-dates">Source code on GitHub</a>, code highlighting with <a href="http://prismjs.com/">Prism by Lea Verou</a></p>
