@@ -11,7 +11,7 @@
 <body>
   <h1>Today's date with leading zeros</h1>
   <p>If day/month is less than '10', it is prefixed with zero. No more, no less.</p>
-  <p id="date"></p>
+  <p>Today: <span id="date"></span> (last updated: <span id="update"></span>)</p>
   <p>For <a href="https://github.com/DaveEveritt/leading-zero-dates/blob/master/readme.md">TODOs see README</a></p>
 
 <pre><code class="language-javascript">{
@@ -23,24 +23,19 @@
   };
   
   const now = {
-    day: function() {
-      const day = d.getDate();
-      return zeroPrefix(day);
-    },
-    month: function() {
-      const month = d.getMonth()+1;
-      return zeroPrefix(month);
-    },
+    day: zeroPrefix(d.getDate()),
+    month: zeroPrefix(d.getMonth()+1),
     year: d.getFullYear()
   }
 
-  document.getElementById("date").innerHTML=`${now.day()}/${now.month()}/${now.year}`;
+  document.getElementById("date").innerHTML=`${now.day}/${now.month}/${now.year}`;
 }
 </pre></code>
 
   <p><a href="https://github.com/DaveEveritt/leading-zero-dates">Source code on GitHub</a>, code highlighting with <a href="http://prismjs.com/">Prism by Lea Verou</a></p>
 
 	<script src="js/date-with-zero.js"></script>
+	<script src="js/update-with-zero.js"></script>
 	<script src="prism/prism.js"></script>
 
 </body>

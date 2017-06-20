@@ -7,16 +7,10 @@
   };
   
   const now = {
-    day: function() {
-      const day = d.getDate();
-      return zeroPrefix(day);
-    },
-    month: function() {
-      const month = d.getMonth()+1;
-      return zeroPrefix(month);
-    },
+    day: zeroPrefix(d.getDate()),
+    month: zeroPrefix(d.getMonth()+1),
     year: d.getFullYear()
   }
 
-  document.getElementById("date").innerHTML=`${now.day()}/${now.month()}/${now.year}`;
+  document.getElementById("date").innerHTML=`${now.day}/${now.month}/${now.year}`;
 }
